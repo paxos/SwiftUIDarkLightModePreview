@@ -19,3 +19,8 @@ struct Checkbox_Previews: PreviewProvider {
 }
 
 ```
+
+### How to use
+- Add this repository to Swift Package Manager
+- `import DarkLightModePreview`
+- Use `DarkLightModePreview` as shown above
