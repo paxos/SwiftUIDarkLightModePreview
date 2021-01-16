@@ -4,7 +4,9 @@
 
 You can use this simple view to preview your SwiftUI views in different appearances:
 
-```
+```swift
+import DarkLightModePreview
+
 struct Checkbox_Previews: PreviewProvider {
     static var previews: some View {
         DarkLightModePreview {
@@ -22,5 +24,3 @@ struct Checkbox_Previews: PreviewProvider {
 
 ### How to use
 - Add this repository to Swift Package Manager
-- `import DarkLightModePreview`
-- Use `DarkLightModePreview` as shown above
