@@ -12,6 +12,7 @@ public struct DarkLightModePreview<Content: View>: View {
 
     public var body: some View {
         Group {
+            #if os(macOS)
             content
                 .padding(5.0)
                 .previewDisplayName("Light")
@@ -32,6 +33,29 @@ public struct DarkLightModePreview<Content: View>: View {
                 .previewDisplayName("Dark selected")
                 .background(Color.accentColor)
                 .environment(\.colorScheme, .dark)
+            #endif
+            #if os(iOS)
+            content
+                .padding(5.0)
+                .previewDisplayName("Light")
+                .background(Color(UIColor.systemBackground))
+                .environment(\.colorScheme, .light)
+            content
+                .padding(5.0)
+                .previewDisplayName("Light selected")
+                .background(Color.accentColor)
+                .environment(\.colorScheme, .light)
+            content
+                .padding(5.0)
+                .previewDisplayName("Dark")
+                .background(Color(UIColor.systemBackground))
+                .environment(\.colorScheme, .dark)
+            content
+                .padding(5.0)
+                .previewDisplayName("Dark selected")
+                .background(Color.accentColor)
+                .environment(\.colorScheme, .dark)
+            #endif
         }
     }
 }
